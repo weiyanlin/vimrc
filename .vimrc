@@ -13,13 +13,13 @@ set ruler           " show the cursor position all the time
 " set list listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
 set list listchars=tab:>.,trail:~,extends:>,precedes:<
 
+" short the tab naming
 function ShortTabLabel ()
     let bufnrlist = tabpagebuflist (v:lnum)
     let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
     let filename = fnamemodify (label, ':t')
     return filename
 endfunction
-
 set guitablabel=%{ShortTabLabel()}
 
 
@@ -95,9 +95,9 @@ set tm=500
 
 
 " TAB settings
+set expandtab           " replace <TAB> with spaces
 set softtabstop=4       " pseudo-TAB, composed by 4 spaces
 set shiftwidth=4
-set expandtab           " replace <TAB> with spaces
 "au FileType Makefile set noexpandtab
 autocmd FileType Makefile set noexpandtab
 
