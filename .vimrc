@@ -13,8 +13,12 @@ set ruler           " show the cursor position all the time
 " set list listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
 set list listchars=tab:>.,trail:~,extends:>,precedes:<
 
-" short the tab naming
-function ShortTabLabel ()
+" set tagpage
+set tabpagemax=18   " default is 10
+set showtabline=1   " 0: do not show tab, 1: show tab when create, 2: always show tab
+
+" short the tabpage naming
+function! ShortTabLabel ()
     let bufnrlist = tabpagebuflist (v:lnum)
     let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
     let filename = fnamemodify (label, ':t')
@@ -104,6 +108,15 @@ autocmd FileType Makefile set noexpandtab
 
 " status line
 set laststatus=2
+
+
+" C/C++ specific settings
+autocmd FileType c,cpp,cc set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
+
+
+" Restore cursor to file position in previous editing session
+set viminfo='10,\"100,:20,%,n~/.viminfo
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 
 " Don't write backup file if vim is being called by "crontab -e"
