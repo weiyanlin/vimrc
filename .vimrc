@@ -123,3 +123,29 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 au BufWrite /private/tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup
+
+
+" ===========================================================================
+" Insert mode command
+" ===========================================================================
+" map ,mo (verilog module)
+autocmd FileType verilog map!
+    \,mo 
+    \module (<CR>
+    \);<CR>
+    \endmodule<ESC>O
+
+" map ,ac (verilog always combinational block)
+autocmd FileType verilog map!
+    \,ac 
+    \always @ (*) begin: ac_<CR>
+    \end // ac_<ESC>kO
+
+" map ,as (verilog always sequential block)
+autocmd FileType verilog map!
+    \,as 
+    \always @ (posedge sysclk or negedge reset_n) begin: as_<CR>
+    \<Tab>if (~reset_n) begin<CR>
+    \<BS>end else begin<CR>
+    \end<CR>
+    \<BS>end // as_<ESC>kkkkO
