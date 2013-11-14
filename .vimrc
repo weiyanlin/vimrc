@@ -72,6 +72,12 @@ elseif (version >= 7)
 endif
 
 
+" folding
+set foldcolumn=4
+highlight Folded guifg=#465457 guibg=#000000 ctermfg=darkcyan ctermbg=black
+highlight FoldColumn guifg=#465457 guibg=#000000 ctermfg=darkcyan ctermbg=black
+
+
 set clipboard=unnamed  " yank to the system register (*) by default
 set showmatch          " cursor shows matching ) and }
 set showmode           " show current mode
