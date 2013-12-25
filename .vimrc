@@ -71,8 +71,8 @@ elseif (version >= 7)
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
     "colors desert
     "colors torte
-    "colors molokai
-    colors solarized
+    colors molokai
+    "colors solarized
 endif
 
 
