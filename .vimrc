@@ -1,5 +1,7 @@
-" Configuration file for vim
-set modelines=0     " CVE-2007-2438
+" Pathogen settings, which must come before file type detection
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#incubate()
+call pathogen#helptags()
 
 " General Settings
 set nocompatible    " not compatible with the old-fashion vi mode
@@ -58,17 +60,19 @@ if has("gui_running")       " GUI color and font settings
     set background=dark
     set cursorline          " highlight current line
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
-    "colors darkblue
     "colors desert
-    colors torte
+    "colors torte
+    "colors molokai
+    colors solarized
 elseif (version >= 7)
     set t_Co=256
     set background=dark
     set cursorline
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
-    "colors darkblue
     "colors desert
-    colors torte
+    "colors torte
+    "colors molokai
+    colors solarized
 endif
 
 
