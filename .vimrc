@@ -4,20 +4,20 @@ call pathogen#incubate()
 call pathogen#helptags()
 
 " General Settings
-set nocompatible    " not compatible with the old-fashion vi mode
-set autoread        " auto read when file is changed from outside
-set backspace=2     " allow backspacing over everything in insert mode
-set history=100     " keep 100 lines of command line history
-set nowrap          " no wrap
-set number          " list the # of line
-set ruler           " show the cursor position all the time
+set nocompatible        " not compatible with the old-fashion vi mode
+set autoread            " auto read when file is changed from outside
+set backspace=2         " allow backspacing over everything in insert mode
+set history=100         " keep 100 lines of command line history
+set nowrap              " no wrap
+set number              " list the # of line
+set ruler               " show the cursor position all the time
 
 " set list listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
 set list listchars=tab:>.,trail:~,extends:>,precedes:<
 
 " set tagpage
-set tabpagemax=18   " default is 10
-set showtabline=1   " 0: do not show tab, 1: show tab when create, 2: always show tab
+set tabpagemax=18       " default is 10
+set showtabline=1       " 0: do not show tab, 1: show tab when create, 2: always show tab
 
 " short the tabpage naming
 function! ShortTabLabel ()
@@ -29,9 +29,9 @@ endfunction
 set guitablabel=%{ShortTabLabel()}
 
 
-filetype on         " enable filetype detection
-"filetype indent on  " enable filetype-specific indenting
-filetype plugin on  " enalbe filetype-specific plugins
+filetype on             " enable filetype detection
+"filetype indent on      " enable filetype-specific indenting
+filetype plugin on      " enalbe filetype-specific plugins
 
 
 " auto reload vimrc when editing it
@@ -39,8 +39,8 @@ filetype plugin on  " enalbe filetype-specific plugins
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 
-syntax on           " syntax highlight
-set hlsearch        " search highlight
+syntax on               " syntax highlight
+set hlsearch            " search highlight
 
 
 " set fonts
@@ -55,10 +55,10 @@ set gfn=MONACO:h16
 "set gfn=Osaka-Mono:h16
 
 
-if has("gui_running")       " GUI color and font settings
-    set t_Co=256            " 256 color mode
+if has("gui_running")   " GUI color and font settings
+    set t_Co=256        " 256 color mode
     set background=dark
-    set cursorline          " highlight current line
+    set cursorline      " highlight current line
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
     "colors desert
     "colors torte
@@ -76,29 +76,36 @@ elseif (version >= 7)
 endif
 
 
+" Control whether various GUI widgets are shown
+set guioptions-=m       " remove menu bar
+set guioptions-=T       " remove toolbar
+set guioptions-=r       " remove right-hand scroll bar
+set guioptions-=L       " remove left-hand scroll bar
+
+
 " folding
-set foldcolumn=4
-highlight Folded guifg=#465457 guibg=#000000 ctermfg=darkcyan ctermbg=black
-highlight FoldColumn guifg=#465457 guibg=#000000 ctermfg=darkcyan ctermbg=black
+"set foldcolumn=4
+"highlight Folded guifg=#465457 guibg=#000000 ctermfg=darkcyan ctermbg=black
+"highlight FoldColumn guifg=#465457 guibg=#000000 ctermfg=darkcyan ctermbg=black
 
 
-set clipboard=unnamed  " yank to the system register (*) by default
-set showmatch          " cursor shows matching ) and }
-set showmode           " show current mode
-set wildchar=<TAB>     " start wild expansion in the command line using <TAB>
-set wildmenu           " wild char completion menu
+set clipboard=unnamed   " yank to the system register (*) by default
+set showmatch           " cursor shows matching ) and }
+set showmode            " show current mode
+set wildchar=<TAB>      " start wild expansion in the command line using <TAB>
+set wildmenu            " wild char completion menu
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
 
 
-set autoindent         " auto indentation
+set autoindent          " auto indentation
 set smartindent
-set copyindent         " copy the previous indentation on autoindenting
-set incsearch          " incremental search
-set nobackup           " no *~ backup files
-set ignorecase         " ignore case when searching
-set smartcase          " ignore case if search pattern is all lowercase, case-sensitive otherwise
-set smarttab           " insert tabs on the start of a line according to context
+set copyindent          " copy the previous indentation on autoindenting
+set incsearch           " incremental search
+set nobackup            " no *~ backup files
+set ignorecase          " ignore case when searching
+set smartcase           " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set smarttab            " insert tabs on the start of a line according to context
 
 
 " disable sound on errors
