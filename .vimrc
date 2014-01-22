@@ -58,7 +58,8 @@ set gfn=MONACO:h16
 if has("gui_running")   " GUI color and font settings
     set t_Co=256        " 256 color mode
     set background=dark
-    set cursorline      " highlight current line
+    set cursorline      " highlight current line, (set cul; set nocul)
+    "set cursorcolumn    " highlight current column, (set cuc; set nocuc)
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
     "colors desert
     "colors torte
@@ -68,6 +69,7 @@ elseif (version >= 7)
     set t_Co=256
     set background=dark
     set cursorline
+    "set cursorcolumn
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
     "colors desert
     "colors torte
