@@ -68,8 +68,9 @@ elseif (version >= 7)
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
     "colors desert
     "colors torte
-    colors molokai
-    "colors solarized
+    "colors molokai
+    let g:solarized_termcolors=256
+    colors solarized
 endif
 
 " Control whether various GUI widgets are shown
