@@ -40,15 +40,19 @@ syntax on               " syntax highlight
 set hlsearch            " search highlight
 
 " set fonts
-"set guifont=Monaco\ 16
-"set guifont=Monaco:h16
-"set gfn=MONACO:h16
 "set gfn=Consolas:h16
 "set gfn=DejaVu\ Sans\ Mono:h16
 "set gfn=Droid\ Sans\ Mono:h16
 "set gfn=Inconsolata:h16
-set gfn=MONACO:h16
 "set gfn=Osaka-Mono:h16
+
+if has("gui_gtk2")
+    "set guifont=MONACO\ 16
+    set gfn=MONACO\ 16
+else
+    "set guifont=MONACO:h16
+    set gfn=MONACO:h16
+endif
 
 if has("gui_running")   " GUI color and font settings
     set t_Co=256        " 256 color mode
@@ -56,9 +60,6 @@ if has("gui_running")   " GUI color and font settings
     set cursorline      " highlight current line, (set cul; set nocul)
     "set cursorcolumn    " highlight current column, (set cuc; set nocuc)
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
-    "colors desert
-    "colors torte
-    "colors molokai
     colors solarized
 elseif (version >= 7)
     set t_Co=256
@@ -66,9 +67,6 @@ elseif (version >= 7)
     set cursorline
     "set cursorcolumn
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
-    "colors desert
-    "colors torte
-    "colors molokai
     let g:solarized_termcolors=256
     colors solarized
 endif
