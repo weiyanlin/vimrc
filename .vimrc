@@ -16,7 +16,7 @@ set ruler               " show the cursor position all the time
 set list listchars=tab:>.,trail:~,extends:>,precedes:<
 
 " set tagpage
-set tabpagemax=18       " default is 10
+set tabpagemax=30       " default is 10
 set showtabline=2       " 0: do not show tab, 1: show tab when create, 2: always show tab
 
 " short the tabpage naming
