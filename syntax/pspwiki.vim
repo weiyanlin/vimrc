@@ -14,7 +14,7 @@ if exists("b:current_syntax")
 endif
 
 
-syntax match Comment "^#.*$"
+syntax match Comment "^\s*#.*$"
 syntax match Comment "^-.*$"
 syntax match Title "^\s*==[^=]\+==\s*$"
 syntax match Keyword "^\s*'''[^']\+'''\s*$"
