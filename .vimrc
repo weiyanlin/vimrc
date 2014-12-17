@@ -49,26 +49,32 @@ set hlsearch            " search highlight
 if has("gui_gtk2")
     "set guifont=MONACO\ 16
     set gfn=MONACO\ 16
+    "set gfn=Menlo\ 16
 else
     "set guifont=MONACO:h16
     set gfn=MONACO:h16
+    "set gfn=Menlo:h16
 endif
 
 if has("gui_running")   " GUI color and font settings
     set t_Co=256        " 256 color mode
     set background=dark
     set cursorline      " highlight current line, (set cul; set nocul)
+    set cc=80           " set colorcolumn=80, supported by VIM7.3
     "set cursorcolumn    " highlight current column, (set cuc; set nocuc)
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
     colors solarized
+    let g:indent_guides_guide_size=1
 elseif (version >= 7)
     set t_Co=256
     set background=dark
     set cursorline
+    set cc=80           " set colorcolumn=80, supported by VIM7.3
     "set cursorcolumn
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
     let g:solarized_termcolors=256
     colors solarized
+    let g:indent_guides_guide_size=1
 endif
 
 " Control whether various GUI widgets are shown
