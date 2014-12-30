@@ -61,7 +61,7 @@ if has("gui_running")   " GUI color and font settings
     set background=dark
     set cursorline      " highlight current line, (set cul; set nocul)
     set cc=80           " set colorcolumn=80, supported by VIM7.3
-    "set cursorcolumn    " highlight current column, (set cuc; set nocuc)
+    set cursorcolumn    " highlight current column, (set cuc; set nocuc)
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
     colors solarized
     let g:indent_guides_guide_size=1
@@ -70,7 +70,7 @@ elseif (version >= 7)
     set background=dark
     set cursorline
     set cc=80           " set colorcolumn=80, supported by VIM7.3
-    "set cursorcolumn
+    set cursorcolumn
     highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
     let g:solarized_termcolors=256
     colors solarized
@@ -152,8 +152,8 @@ autocmd FileType verilog map!
 " map ,as (verilog always sequential block)
 autocmd FileType verilog map!
     \,as 
-    \always @ (posedge sysclk or negedge reset_n) begin: as_<CR>
-    \<Tab>if (~reset_n) begin<CR>
+    \always @ (posedge sysclk or negedge reset_n_a) begin: as_<CR>
+    \<Tab>if (~reset_n_a) begin<CR>
     \<BS>end else begin<CR>
     \end<CR>
     \<BS>end // as_<ESC>kkkkO
