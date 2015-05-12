@@ -14,6 +14,7 @@ set ruler               " show the cursor position all the time
 
 " set list listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
 set list listchars=tab:>.,trail:~,extends:>,precedes:<
+set spell spelllang=en_us   " set spell checking
 
 " set tagpage
 set tabpagemax=30       " default is 10
