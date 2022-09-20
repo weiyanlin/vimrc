@@ -139,22 +139,24 @@ au BufWrite /private/etc/pw.* set nowritebackup
 " ===========================================================================
 " map ,mo (verilog module)
 autocmd FileType verilog map!
-    \,mo 
+    \,mo
     \module (<CR>
     \);<CR>
     \endmodule<ESC>O
 
 " map ,ac (verilog always combinational block)
 autocmd FileType verilog map!
-    \,ac 
+    \,ac
     \always @ (*) begin: ac_<CR>
     \end // ac_<ESC>kO
 
 " map ,as (verilog always sequential block)
 autocmd FileType verilog map!
-    \,as 
+    \,as
     \always @ (posedge sysclk or negedge reset_n_a) begin: as_<CR>
     \<Tab>if (~reset_n_a) begin<CR>
     \<BS>end else begin<CR>
     \end<CR>
     \<BS>end // as_<ESC>kkkkO
+
+"Happy wife, happy life"
