@@ -22,10 +22,10 @@ set showtabline=2       " 0: do not show tab, 1: show tab when create, 2: always
 
 " short the tabpage naming
 function! ShortTabLabel ()
-    let bufnrlist = tabpagebuflist (v:lnum)
-    let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
-    let filename = fnamemodify (label, ':t')
-    return filename
+   let bufnrlist = tabpagebuflist (v:lnum)
+   let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
+   let filename = fnamemodify (label, ':t')
+   return filename
 endfunction
 set guitablabel=%{ShortTabLabel()}
 
@@ -48,34 +48,34 @@ set hlsearch            " search highlight
 "set gfn=Osaka-Mono:h16
 
 if has("gui_gtk2")
-    "set guifont=MONACO\ 16
-    set gfn=MONACO\ 16
-    "set gfn=Menlo\ 16
+   "set guifont=MONACO\ 16
+   set gfn=MONACO\ 16
+   "set gfn=Menlo\ 16
 else
-    "set guifont=MONACO:h16
-    set gfn=MONACO:h16
-    "set gfn=Menlo:h16
+   "set guifont=MONACO:h16
+   set gfn=MONACO:h16
+   "set gfn=Menlo:h16
 endif
 
 if has("gui_running")   " GUI color and font settings
-    set t_Co=256        " 256 color mode
-    set background=dark
-    set cursorline      " highlight current line, (set cul; set nocul)
-    set cc=80           " set colorcolumn=80, supported by VIM7.3
-    set cursorcolumn    " highlight current column, (set cuc; set nocuc)
-    highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
-    colors solarized
-    let g:indent_guides_guide_size=1
+   set t_Co=256        " 256 color mode
+   set background=dark
+   set cursorline      " highlight current line, (set cul; set nocul)
+   set cc=80           " set colorcolumn=80, supported by VIM7.3
+   set cursorcolumn    " highlight current column, (set cuc; set nocuc)
+   highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
+   colors solarized
+   let g:indent_guides_guide_size=1
 elseif (version >= 7)
-    set t_Co=256
-    set background=dark
-    set cursorline
-    set cc=80           " set colorcolumn=80, supported by VIM7.3
-    set cursorcolumn
-    highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
-    let g:solarized_termcolors=256
-    colors solarized
-    let g:indent_guides_guide_size=1
+   set t_Co=256
+   set background=dark
+   set cursorline
+   set cc=80           " set colorcolumn=80, supported by VIM7.3
+   set cursorcolumn
+   highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
+   let g:solarized_termcolors=256
+   colors solarized
+   let g:indent_guides_guide_size=1
 endif
 
 " Control whether various GUI widgets are shown
@@ -139,24 +139,24 @@ au BufWrite /private/etc/pw.* set nowritebackup
 " ===========================================================================
 " map ,mo (verilog module)
 autocmd FileType verilog map!
-    \,mo
-    \module (<CR>
-    \);<CR>
-    \endmodule<ESC>O
+   \,mo
+   \module (<CR>
+   \);<CR>
+   \endmodule<ESC>O
 
 " map ,ac (verilog always combinational block)
 autocmd FileType verilog map!
-    \,ac
-    \always @ (*) begin: ac_<CR>
-    \end // ac_<ESC>kO
+   \,ac
+   \always @ (*) begin: ac_<CR>
+   \end // ac_<ESC>kO
 
 " map ,as (verilog always sequential block)
 autocmd FileType verilog map!
-    \,as
-    \always @ (posedge sysclk or negedge reset_n_a) begin: as_<CR>
-    \<Tab>if (~reset_n_a) begin<CR>
-    \<BS>end else begin<CR>
-    \end<CR>
-    \<BS>end // as_<ESC>kkkkO
+   \,as
+   \always @ (posedge sysclk or negedge reset_n_a) begin: as_<CR>
+   \<Tab>if (~reset_n_a) begin<CR>
+   \<BS>end else begin<CR>
+   \end<CR>
+   \<BS>end // as_<ESC>kkkkO
 
 "Happy wife, happy life"
