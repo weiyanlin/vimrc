@@ -3,6 +3,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#incubate()
 call pathogen#helptags()
 
+
 " General Settings
 set nocompatible        " not compatible with the old-fashion vi mode
 set autoread            " auto read when file is changed from outside
